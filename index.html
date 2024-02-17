@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__info">
+            <img class="cabecalho__info__logoAlura" src="./img/logo.svg" alt="logo da Alura">
+        </nav>
+    </header>
+    <main class="codificador">
+        <section class="codificador__digitar">
+            <textarea class="codificador__digitar__titulo">a digite o seu texto</textarea>
+            <div class="codificador__digitar__div1">
+                <img src="./img/icon.svg" alt="icone de alerta">
+                <p class="codificador__digitar__texto">Apenas letras minúsculas e sem acento.</p>
+            </div>
+            <div class="codificador__digitar__div2">
+                <button onclick="criptografar()" name="criptografia" type="submit" class="button codificador__digitar__criptografia" disabled>Criptografar</button>
+                <button name="descriptografia" type="submit" class="button codificador__digitar__descriptografia" disabled>Descriptografar</button>
+            </div>
+        </section>
+        <section class="codificador__resultado">
+            <img id="img" class="codificador__resultado__img" src="./img/img.svg" alt="procurando para um resultado não encontrado">
+            <div class="codificador__resultado__conteudo">
+                <h2 class="codificador__resultado__subtitulo">Nenhuma mensagem encontrada</h2>
+                <p class="codificador__resultado__texto">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+            <button name="copiar" class="codificador__resultado__copiar">Copiar</button>
+        </section>
+    </main>
+    <footer class="rodape">
+        <p>Desenvolvido por Israel</p>
+    </footer>
+
+    <script src="./scripts/validacao_input.js"></script>
+    <script src="./scripts/main.js"></script>
+
+</body>
+</html>
