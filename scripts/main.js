@@ -24,14 +24,20 @@ console.log(str);
 
 function find_e() {
     // console.log(textArea.replace('e', 'enter'));
+    let rgx = /e/g;
+    let arr = [...textArea.matchAll(rgx)];
+    // console.log(arr);
+    let enter = 'enter';
+    console.log(arr[0][0]);
+    console.log(arr[1][0]);
+    console.log(arr[2][0]);
     for(let i = 0;i < arr.length;i++){
         // console.log(arr[i].replace('e', 'enter'));
         // console.log(arr[i]);
+        // console.log(arr[i][0].replace(/e/g, 'enter'));
     }
 }
-
-let rgx = /e/g;
-let arr = [...textArea.matchAll(rgx)];
+find_e();
 
 const resultadoTexto = document.querySelector(".codificador__resultado__texto");
 resultadoTexto.style.fontWeight = "400";
