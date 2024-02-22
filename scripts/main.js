@@ -34,7 +34,9 @@ btnCripto.addEventListener("click", function (){
 
     const resultado = document.querySelector('.codificador__resultado__subtitulo');
     const resultadoP = document.querySelector('.codificador__resultado__texto');
+    const img = document.querySelector('.codificador__resultado__img')
     resultadoP.remove();
+    img.remove();
     
     resultado.innerHTML = msgCriptografada;
     
