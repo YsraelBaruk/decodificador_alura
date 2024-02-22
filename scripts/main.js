@@ -22,7 +22,7 @@ let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML
 let str = new String(textArea);
 // console.log(str);
 
-let btnCripto = document.getElementById('button');
+let btnCripto = document.getElementById('criptografia);
 
 btnCripto.addEventListener("click", function (){
     let msgCriptografada;
