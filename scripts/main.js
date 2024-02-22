@@ -22,33 +22,27 @@ let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML
 let str = new String(textArea);
 // console.log(str);
 
-function letra_e(mensagem) {
-    if(str.includes('e')){
-        console.log('tem letra aqui');
-        msgCript = mensagem.replace(/e/g, 'enter');
-    } else {
-        console.log('aqui não tem');
-    }
-    return msgCript;
-}
+let btnCripto = document.querySelector('.codificador__digitar__criptografia');
 
-function letra_a(mensagem) {
-    if(str.includes('a')){
-        console.log('tem letra aqui');
-        msgCripA = mensagem.replace(/a/g, 'ai');
-    } else {
-        console.log('aqui não tem');
-    }
-    return msgCripA;
-}
+btnCripto.addEventListener("click", function (){
+    let msgCriptografada;
+    msgCriptografada = mensagem.replace(/e/g, 'enter');
+    msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
+    msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
+    msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
+    msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
 
-console.log(letra_e(str));
-console.log(letra_a(msgCript));
-console.log(letra_a(msgCriptA));
-console.log(letra_a(msgCript));
-console.log(letra_a(msgCript));
-console.log(letra_a(msgCript));
+    const resultado = document.querySelector('.codificador__resultado__subtitulo');
+    const resultadoP = document.querySelector('.codificador__resultado__texto');
+    resultadoP.remove();
 
-const resultadoTexto = document.querySelector(".codificador__resultado__texto");
+    resultado.innerHTML = msgCriptografada;
+
+    return msgCriptografada;
+});
+
+let resultadoTexto = document.querySelector(".codificador__resultado__texto");
 resultadoTexto.style.fontWeight = "400";
 resultadoTexto.style.fontSize = "1.5rem";
+
+console.log(criptografia(str));
