@@ -18,26 +18,22 @@ gaitober" => "gato"
 
 /* <textarea class="codificador__digitar__titulo">Digite o seu texto</textarea> */
 
-const textArea = document.querySelector('.codificador__digitar__titulo').innerHTML;
-const str = new String(textArea);
-console.log(str);
+let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML;
+let str = new String(textArea);
+// console.log(str);
 
-function find_e() {
-    // console.log(textArea.replace('e', 'enter'));
-    let rgx = /e/g;
-    let arr = [...textArea.matchAll(rgx)];
-    // console.log(arr);
-    let enter = 'enter';
-    console.log(arr[0][0]);
-    console.log(arr[1][0]);
-    console.log(arr[2][0]);
-    for(let i = 0;i < arr.length;i++){
-        // console.log(arr[i].replace('e', 'enter'));
-        // console.log(arr[i]);
-        // console.log(arr[i][0].replace(/e/g, 'enter'));
+function letra_e() {
+    let msg;
+    if(str.includes('e')){
+        console.log('tem letra aqui');
+        msg = str.replace(/e/g, 'enter');
+    } else {
+        console.log('aqui não tem');
     }
+    return msg;
 }
-find_e();
+
+console.log(letra_e());
 
 const resultadoTexto = document.querySelector(".codificador__resultado__texto");
 resultadoTexto.style.fontWeight = "400";
