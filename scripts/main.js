@@ -22,7 +22,7 @@ let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML
 let str = new String(textArea);
 // console.log(str);
 
-let btnCripto = document.querySelector('.codificador__digitar__criptografia');
+let btnCripto = document.getElementById('criptografia');
 
 btnCripto.addEventListener("click", function (){
     let msgCriptografada;
@@ -35,14 +35,29 @@ btnCripto.addEventListener("click", function (){
     const resultado = document.querySelector('.codificador__resultado__subtitulo');
     const resultadoP = document.querySelector('.codificador__resultado__texto');
     resultadoP.remove();
-
+    
     resultado.innerHTML = msgCriptografada;
-
-    return msgCriptografada;
+    
+    let resultadoTexto = document.querySelector(".codificador__resultado__texto");
+    resultadoTexto.style.fontWeight = "400";
+    resultadoTexto.style.fontSize = "1.5rem";
 });
 
-let resultadoTexto = document.querySelector(".codificador__resultado__texto");
-resultadoTexto.style.fontWeight = "400";
-resultadoTexto.style.fontSize = "1.5rem";
+// function criptografia() {
+//     let msgCriptografada;
+//     msgCriptografada = mensagem.replace(/e/g, 'enter');
+//     msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
+//     msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
+//     msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
+//     msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
 
-console.log(criptografia(str));
+//     const resultado = document.querySelector('.codificador__resultado__subtitulo');
+//     const resultadoP = document.querySelector('.codificador__resultado__texto');
+//     resultadoP.remove();
+    
+//     resultado.innerHTML = msgCriptografada;
+    
+//     let resultadoTexto = document.querySelector(".codificador__resultado__texto");
+//     resultadoTexto.style.fontWeight = "400";
+//     resultadoTexto.style.fontSize = "1.5rem";
+// }
