@@ -18,25 +18,49 @@ gaitober" => "gato"
 
 /* <textarea class="codificador__digitar__titulo">Digite o seu texto</textarea> */
 
-const textArea = document.querySelector(".codificador__digitar__titulo").innerHTML;
-const str = new String(textArea);
-console.log(str);
 
-function find_e() {
-    // console.log(textArea.replace('e', 'enter'));
-    let rgx = /e/g;
-    // let arr = [...textArea.matchAll(rgx)];
-    let arr = textArea.match(rgx)
-    console.log(arr);
-    console.log(arr[0][0]);
-    for(let i = 0;i < arr.length;i++){
-        // console.log(arr[i].replace('e', 'enter'));
-        // console.log(arr[i]);
-        // console.log(arr[i][0].replace(/e/g, 'enter'));
-    }
-}
-find_e();
+let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML;
+let str = new String(textArea);
+// console.log(str);
 
-const resultadoTexto = document.querySelector(".codificador__resultado__texto");
-resultadoTexto.style.fontWeight = "400";
-resultadoTexto.style.fontSize = "1.5rem";
+let btnCripto = document.getElementById('criptografia');
+
+btnCripto.addEventListener("click", function (){
+    let msgCriptografada;
+    msgCriptografada = mensagem.replace(/e/g, 'enter');
+    msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
+    msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
+    msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
+    msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
+
+    const resultado = document.querySelector('.codificador__resultado__subtitulo');
+    const resultadoP = document.querySelector('.codificador__resultado__texto');
+    const img = document.querySelector('.codificador__resultado__img')
+    resultadoP.remove();
+    img.remove();
+    
+    resultado.innerHTML = msgCriptografada;
+    
+    let resultadoTexto = document.querySelector(".codificador__resultado__texto");
+    resultadoTexto.style.fontWeight = "400";
+    resultadoTexto.style.fontSize = "1.5rem";
+});
+
+// function criptografia() {
+//     let msgCriptografada;
+//     msgCriptografada = mensagem.replace(/e/g, 'enter');
+//     msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
+//     msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
+//     msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
+//     msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
+
+//     const resultado = document.querySelector('.codificador__resultado__subtitulo');
+//     const resultadoP = document.querySelector('.codificador__resultado__texto');
+//     resultadoP.remove();
+    
+//     resultado.innerHTML = msgCriptografada;
+    
+//     let resultadoTexto = document.querySelector(".codificador__resultado__texto");
+//     resultadoTexto.style.fontWeight = "400";
+//     resultadoTexto.style.fontSize = "1.5rem";
+// }

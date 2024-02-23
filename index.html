@@ -14,14 +14,15 @@
     </header>
     <main class="codificador">
         <section class="codificador__digitar">
-            <textarea class="codificador__digitar__titulo">a digite o seu texto</textarea>
+            <textarea class="codificador__digitar__titulo">a e i o u</textarea>
             <div class="codificador__digitar__div1">
                 <img src="./img/icon.svg" alt="icone de alerta">
                 <p class="codificador__digitar__texto">Apenas letras minúsculas e sem acento.</p>
             </div>
             <div class="codificador__digitar__div2">
-                <button onclick="criptografar()" name="criptografia" type="submit" class="button codificador__digitar__criptografia" disabled>Criptografar</button>
-                <button name="descriptografia" type="submit" class="button codificador__digitar__descriptografia" disabled>Descriptografar</button>
+                <button id="criptografia" name="criptografia" class="codificador__digitar__criptografia">Criptografar</button>
+                <button name="descriptografia" class="codificador__digitar__descriptografia">Descriptografar</button>
+                <input type="submit" value="Criptografar" class="codificador__digitar__criptografia">
             </div>
         </section>
         <section class="codificador__resultado">
