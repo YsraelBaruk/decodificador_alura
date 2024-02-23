@@ -18,19 +18,17 @@ gaitober" => "gato"
 
 /* <textarea class="codificador__digitar__titulo">Digite o seu texto</textarea> */
 
-const textArea = document.querySelector('.codificador__digitar__titulo').innerHTML;
+const textArea = document.querySelector(".codificador__digitar__titulo").innerHTML;
 const str = new String(textArea);
 console.log(str);
 
 function find_e() {
     // console.log(textArea.replace('e', 'enter'));
     let rgx = /e/g;
-    let arr = [...textArea.matchAll(rgx)];
-    // console.log(arr);
-    let enter = 'enter';
+    // let arr = [...textArea.matchAll(rgx)];
+    let arr = textArea.match(rgx)
+    console.log(arr);
     console.log(arr[0][0]);
-    console.log(arr[1][0]);
-    console.log(arr[2][0]);
     for(let i = 0;i < arr.length;i++){
         // console.log(arr[i].replace('e', 'enter'));
         // console.log(arr[i]);
