@@ -30,6 +30,12 @@ textarea {
     color: var(--azul_escuro);
 }
 
+textarea::placeholder {
+    font-size: 2rem;
+    color: var(--principal-font-text);
+    font-weight: 400;
+}
+
 .cabecalho nav {
     padding: 2%;
 }

@@ -25,42 +25,26 @@ let str = new String(textArea);
 
 let btnCripto = document.getElementById('criptografia');
 
-btnCripto.addEventListener("click", function (){
-    let msgCriptografada;
-    msgCriptografada = mensagem.replace(/e/g, 'enter');
-    msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
-    msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
-    msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
-    msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
+let msgCriptografada;
+function criptografia(mensagem) {
+    msgCriptografada = mensagem.replace(/e/g, 'enter')
+        .replace(/i/g, 'imes')
+        .replace(/a/g, 'ai')
+        .replace(/o/g, 'ober')
+        .replace(/u/g, 'ufat');
+    return msgCriptografada;
+}
 
-    const resultado = document.querySelector('.codificador__resultado__subtitulo');
-    const resultadoP = document.querySelector('.codificador__resultado__texto');
-    const img = document.querySelector('.codificador__resultado__img')
-    resultadoP.remove();
-    img.remove();
-    
-    resultado.innerHTML = msgCriptografada;
-    
-    let resultadoTexto = document.querySelector(".codificador__resultado__texto");
-    resultadoTexto.style.fontWeight = "400";
-    resultadoTexto.style.fontSize = "1.5rem";
-});
+console.log(criptografia(str));
 
-// function criptografia() {
-//     let msgCriptografada;
-//     msgCriptografada = mensagem.replace(/e/g, 'enter');
-//     msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
-//     msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
-//     msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
-//     msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
+let msgDescripto;
+function descriptografia(mensagem) {
+    msgDescripto = mensagem.replace(/ufat/g, 'u')
+        .replace(/ober/g, 'o')
+        .replace(/ai/g, 'a')
+        .replace(/imes/g, 'i')
+        .replace(/enter/g, 'e');
+    return msgDescripto;
+}
 
-//     const resultado = document.querySelector('.codificador__resultado__subtitulo');
-//     const resultadoP = document.querySelector('.codificador__resultado__texto');
-//     resultadoP.remove();
-    
-//     resultado.innerHTML = msgCriptografada;
-    
-//     let resultadoTexto = document.querySelector(".codificador__resultado__texto");
-//     resultadoTexto.style.fontWeight = "400";
-//     resultadoTexto.style.fontSize = "1.5rem";
-// }
+console.log(descriptografia(msgCriptografada));
