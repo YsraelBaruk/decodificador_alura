@@ -75,6 +75,7 @@ textarea::placeholder {
     font-weight: 400;
     font-size: 1rem;
     border-style: none;
+    cursor: pointer;
 }
 
 .codificador__digitar__descriptografia{
@@ -86,6 +87,7 @@ textarea::placeholder {
     font-weight: 400;
     font-size: 1rem;
     border: 1px solid var(--azul_escuro);
+    cursor: pointer;
 }
 
 .codificador__resultado{
@@ -97,6 +99,10 @@ textarea::placeholder {
     flex-direction: column;
     align-items: center;
     gap: 32px;
+}
+
+.desactive{
+    display: none !important;
 }
 
 .codificador__resultado__conteudo {
@@ -129,6 +135,7 @@ textarea::placeholder {
     font-weight: 400;
     font-size: 1rem;
     border: 1px solid var(--azul_escuro);
+    cursor: pointer;
 }
 
 .rodape {

@@ -14,23 +14,26 @@
     </header>
     <main class="codificador">
         <section class="codificador__digitar">
-            <textarea class="codificador__digitar__titulo">a e i o u</textarea>
+            <textarea class="codificador__digitar__titulo" placeholder="Digite o seu texto"></textarea>
             <div class="codificador__digitar__div1">
                 <img src="./img/icon.svg" alt="icone de alerta">
                 <p class="codificador__digitar__texto">Apenas letras minúsculas e sem acento.</p>
             </div>
             <div class="codificador__digitar__div2">
-                <button class="codificador__digitar__criptografia">Criptografar</button>
-                <button class="codificador__digitar__descriptografia">Descriptografar</button>
+                <button id="criptografia" class="codificador__digitar__criptografia">Criptografar</button>
+                <button id="descriptografia" class="codificador__digitar__descriptografia">Descriptografar</button>
             </div>
         </section>
         <section class="codificador__resultado">
-            <img id="img" class="codificador__resultado__img" src="./img/img.svg" alt="procurando para um resultado não encontrado">
-            <div class="codificador__resultado__conteudo">
+            <div id="output_default" class="codificador__resultado__conteudo">
+                <img id="img" class="codificador__resultado__img" src="./img/img.svg" alt="procurando para um resultado não encontrado">
                 <h2 class="codificador__resultado__subtitulo">Nenhuma mensagem encontrada</h2>
                 <p class="codificador__resultado__texto">Digite um texto que você deseja criptografar ou descriptografar.</p>
             </div>
-            <button name="copiar" class="codificador__resultado__copiar">Copiar</button>
+            <div id="output_default_txt" class="desactive">
+                <p id="text_output"></p>
+                <button id="copiar" class="codificador__resultado__copiar">Copiar</button>
+            </div>
         </section>
     </main>
     <footer class="rodape">

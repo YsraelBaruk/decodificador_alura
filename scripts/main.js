@@ -17,34 +17,93 @@ gaitober" => "gato"
 */
 
 /* <textarea class="codificador__digitar__titulo">Digite o seu texto</textarea> */
+let text;
 
+function testRegex(textInput) {
+    let regex = /^[A-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ.,~!@#$%&*)({}_'0-9]+$/;
+    let textArr = textInput.split("");
+    const existTextInvalid = textArr.find((element) => regex.test(element));
+    return existTextInvalid ? false : true;
+}
 
-let textArea = document.querySelector('.codificador__digitar__titulo').innerHTML;
-let str = new String(textArea);
-// console.log(str);
+getInputText = () => {
+    let textArea = document.querySelector('.codificador__digitar__titulo');
+    
+    console.log(testRegex(textArea.value));
+    if (!textArea) {
+      return false;
+    }
+    return textArea.value;
+};
+setOutputText = (text) => {
+    if (!text) {
+      return false;
+    }
+    document.getElementById("output_default").classList.add("desactive");
+    document.getElementById("output_default_txt").classList.remove("desactive");
+    document.getElementById("text_output").innerText = `${text}`;
+
+}
+
+function copiarTexto() {
+    let textoCopiado = document.getElementById("text_output").textContent;
+    navigator.clipboard.writeText(textoCopiado);
+}
+let copy = document.getElementById("copiar");
+copy.addEventListener("click", function(){
+    copiarTexto();
+});
+
+function criptografia(mensagem) {
+    const resultado = mensagem
+    .replaceAll('e', 'enter')
+    .replaceAll('i', 'imes')
+    .replaceAll('a', 'ai')
+    .replaceAll('o', 'ober')
+    .replaceAll('u', 'ufat');
+
+    setOutputText(resultado);
+    return resultado;
+}
+
+function descriptografia(mensagem) {
+    const resultado = mensagem
+    .replaceAll(/ufat/g, 'u')
+    .replaceAll(/ober/g, 'o')
+    .replaceAll(/ai/g, 'a')
+    .replaceAll(/imes/g, 'i')
+    .replaceAll(/enter/g, 'e');
+
+    setOutputText(resultado);
+    return resultado;
+}
+
+let btnDescript = document.getElementById("descriptografia");
+btnDescript.addEventListener("click", () => {
+    const textInput = getInputText();
+    console.log(descriptografia(textInput));
+    descriptografia(textInput);    
+});
 
 let btnCripto = document.getElementById('criptografia');
+btnCripto.addEventListener("click", () => {    
+    const textInput = getInputText();
+    let valid = testRegex(textInput);
+    if(!valid){
+        return false; 
+    } else {
+        console.log(criptografia(textInput));
+        criptografia(textInput);
+    }
+});
 
-let msgCriptografada;
-function criptografia(mensagem) {
-    msgCriptografada = mensagem.replace(/e/g, 'enter')
-        .replace(/i/g, 'imes')
-        .replace(/a/g, 'ai')
-        .replace(/o/g, 'ober')
-        .replace(/u/g, 'ufat');
-    return msgCriptografada;
-}
 
-console.log(criptografia(str));
 
-let msgDescripto;
-function descriptografia(mensagem) {
-    msgDescripto = mensagem.replace(/ufat/g, 'u')
-        .replace(/ober/g, 'o')
-        .replace(/ai/g, 'a')
-        .replace(/imes/g, 'i')
-        .replace(/enter/g, 'e');
-    return msgDescripto;
-}
 
-console.log(descriptografia(msgCriptografada));
+
+
+// msgCriptografada = mensagem.replace(/e/g, 'enter');
+// msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
+// msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
+// msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
+// msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
