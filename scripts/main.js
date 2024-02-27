@@ -31,16 +31,17 @@ getInputText = () => {
     
     console.log(testRegex(textArea.value));
     if (!textArea) {
-      return false;
+        return false;
     }
     return textArea.value;
 };
 setOutputText = (text) => {
     if (!text) {
-      return false;
+        return false;
     }
     document.getElementById("output_default").classList.add("desactive");
     document.getElementById("output_default_txt").classList.remove("desactive");
+    document.getElementById("copiar").classList.remove("desactive");
     document.getElementById("text_output").innerText = `${text}`;
 
 }
@@ -92,18 +93,14 @@ btnCripto.addEventListener("click", () => {
     if(!valid){
         return false; 
     } else {
+        let p = document.getElementById("text_output");
+
+        p.style.fontFamily = "Inter";
+        p.style.fontSize = "24px";
+        p.style.fontWeight = "400";
+        p.style.color = "#495057";
+        p.style.wordBreak = "break-all";        
         console.log(criptografia(textInput));
         criptografia(textInput);
     }
 });
-
-
-
-
-
-
-// msgCriptografada = mensagem.replace(/e/g, 'enter');
-// msgCriptografada = msgCriptografada.replace(/i/g, 'imes');
-// msgCriptografada = msgCriptografada.replace(/a/g, 'ai');
-// msgCriptografada = msgCriptografada.replace(/o/g, 'ober');
-// msgCriptografada = msgCriptografada.replace(/u/g, 'ufat');
